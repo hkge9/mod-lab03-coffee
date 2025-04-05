@@ -28,3 +28,11 @@ int Automata::coin(int csh){
   }
   return cash;
 }
+
+vector <string> Automata::getMenu(){
+  vector <string> menuAndPrices;
+  for (int i=0; i<menu.size();i++){
+    menuAndPrices.push_back(menu[i] + " " + to_string(prices[i]));
+  }
+ return menuAndPrices;
+}

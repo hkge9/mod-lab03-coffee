@@ -25,5 +25,5 @@ class Automata{
   void on();
   void off();
   int coin (int csh);
-  
+  vector <string> getMenu();
 };
