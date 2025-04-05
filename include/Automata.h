@@ -24,6 +24,6 @@ class Automata{
   Automata();
   void on();
   void off();
-  
+  int coin (int csh);
   
 };

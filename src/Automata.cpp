@@ -9,12 +9,22 @@ Automata::Automata(){
 
 void Automata::on(){
   if (state == OFF){
-    state == WAIT;
+    state = WAIT;
   }
 }
 
 void Automata::off(){
   if (state == WAIT){
-    state == OFF;
+    state = OFF;
   }
+}
+
+int Automata::coin(int csh){
+  if (state == WAIT){
+    state = ACCEPT;
+  }
+  if (state == ACCEPT){
+    cash = csh;
+  }
+  return cash;
 }
