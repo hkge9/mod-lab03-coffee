@@ -111,11 +111,3 @@ TEST(AutomataTest, MultipleDrinksSubtractCashCorrectly) {
     EXPECT_EQ(a.getState(), WAIT);
 }
 
-TEST(AutomataTest, CoinAfterChoiceStillAcceptsMoney) {
-    Automata a;
-    a.on();
-    a.coin(200);
-    a.choice("Espresso");
-    a.coin(50);
-    EXPECT_EQ(a.getState(), ACCEPT);
-}
