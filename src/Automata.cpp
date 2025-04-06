@@ -19,14 +19,17 @@ void Automata::off(){
   }
 }
 
-int Automata::coin(int csh){
-  if (state == WAIT){
-    state = ACCEPT;
-  }
-  if (state == ACCEPT){
-    cash = csh;
-  }
-  return cash;
+void Automata::coin(int csh) {
+    if (state == WAIT || state == ACCEPT) {
+        if (csh > 0) {
+            cash += csh;
+            state = ACCEPT;
+        }
+        else {
+            cancel();
+        }
+    }
+  
 }
 
 vector <string> Automata::getMenu(){
@@ -35,4 +38,8 @@ vector <string> Automata::getMenu(){
     menuAndPrices.push_back(menu[i] + " " + to_string(prices[i]));
   }
  return menuAndPrices;
+}
+
+void Automata::cancel() {
+    state = WAIT;
 }

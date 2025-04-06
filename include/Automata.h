@@ -24,6 +24,7 @@ class Automata{
   Automata();
   void on();
   void off();
-  int coin (int csh);
+  void coin (int csh);
   vector <string> getMenu();
+  void cancel();
 };
