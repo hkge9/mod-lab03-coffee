@@ -1,8 +1,11 @@
+// Copyright 2025 9hkge
+
+#ifndef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
+
 #include <iostream>
 #include <string>
 #include <vector>
-using namespace std;
-
 
 enum STATES {
   OFF,
@@ -12,23 +15,24 @@ enum STATES {
   COOK
 };
 
-class Automata{
-  private:
-  int cash;
-  vector <string> menu;
-  vector <int> prices;
-  STATES state;
-
-
-  public:
+class Automata {
+ public:
   Automata();
   void on();
   void off();
-  void coin (int csh);
-  vector <string> getMenu();
+  void coin(int csh);
+  std::vector<std::string> getMenu();
   void cancel();
   STATES getState();
-  void choice(string drink);
+  void choice(std::string drink);
   void cook();
   void finish();
+
+ private:
+  int cash;
+  std::vector<std::string> menu;
+  std::vector<int> prices;
+  STATES state;
 };
+
+#endif  // INCLUDE_AUTOMATA_H_
