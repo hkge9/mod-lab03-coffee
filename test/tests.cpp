@@ -1,6 +1,8 @@
 // Copyright 2022 GHA Test Team
 
 #include <gtest/gtest.h>
+#include <string>   
+#include <vector>   
 #include "Automata.h"
 
 TEST(AutomataTest, InitialStateIsOff) {
@@ -46,7 +48,8 @@ TEST(AutomataTest, CoinWithNegativeAmountCallsCancel) {
 TEST(AutomataTest, GetMenuReturnsCorrectItems) {
     Automata a;
     std::vector<std::string> expected = {
-        "Espresso 130", "Cappuccino 150", "Latte 170", "Americano 120", "Raf 200"
+        "Espresso 130", "Cappuccino 150", "Latte 170",
+        "Americano 120", "Raf 200"
     };
     EXPECT_EQ(a.getMenu(), expected);
 }
@@ -103,10 +106,10 @@ TEST(AutomataTest, MultipleDrinksSubtractCashCorrectly) {
     Automata a;
     a.on();
     a.coin(400);
-    a.choice("Latte");  // 170
+    a.choice("Latte");       // 170
     a.cook();
     a.coin(100);
-    a.choice("Americano"); // 120
+    a.choice("Americano");   // 120
     a.cook();
     EXPECT_EQ(a.getState(), WAIT);
 }
