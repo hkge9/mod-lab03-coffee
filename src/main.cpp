@@ -7,8 +7,7 @@ int main(){
   coffee.on();
   cout << st[coffee.getState()] << endl;
   vector <string> testMenu = coffee.getMenu();
-  for (string val : testMenu) 
-  {
+  for (string val : testMenu) {
 	  cout << val << " ";
   }
   coffee.coin(200);
