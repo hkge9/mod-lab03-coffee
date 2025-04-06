@@ -34,7 +34,7 @@ void Automata::coin(int csh) {
 
 vector <string> Automata::getMenu(){
   vector <string> menuAndPrices;
-  for (int i=0; i<menu.size();i++){
+  for (int i = 0; i < menu.size(); i++){
     menuAndPrices.push_back(menu[i] + " " + to_string(prices[i]));
   }
  return menuAndPrices;
@@ -42,4 +42,38 @@ vector <string> Automata::getMenu(){
 
 void Automata::cancel() {
     state = WAIT;
+}
+
+STATES Automata::getState() {
+    return state;
+}
+
+void Automata::choice(string drink) {
+    bool status = false;
+    if (state == ACCEPT || state == CHECK) {
+        state = CHECK;
+    }
+    for (int i = 0; i < menu.size(); i++) {
+        if (menu[i] == drink && cash >= prices[i]) {
+            cash = cash - prices[i];
+            status = true;
+        }
+    }
+    if (status == false) {
+        cancel();
+    }
+
+}
+
+void Automata::cook() {
+    if (state == CHECK) {
+        state = COOK;
+    }
+    finish();
+}
+
+void Automata::finish() {
+    if (state == COOK) {
+        state = WAIT;
+    }
 }

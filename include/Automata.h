@@ -27,4 +27,8 @@ class Automata{
   void coin (int csh);
   vector <string> getMenu();
   void cancel();
+  STATES getState();
+  void choice(string drink);
+  void cook();
+  void finish();
 };
