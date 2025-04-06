@@ -3,10 +3,6 @@
 #include <gtest/gtest.h>
 #include "Automata.h"
 
-
-#include <gtest/gtest.h>
-#include "Automata.h"
-
 TEST(AutomataTest, InitialStateIsOff) {
     Automata a;
     EXPECT_EQ(a.getState(), OFF);
