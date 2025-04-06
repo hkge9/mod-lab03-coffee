@@ -1,9 +1,8 @@
 // Copyright 2025 9hkge
 
 #include "Automata.h"
-
-#include <vector>   
-#include <string>   
+#include <vector>
+#include <string>
 
 Automata::Automata() {
   cash = 0;

@@ -1,10 +1,9 @@
 // Copyright 2025 9hkge
 
 #include "Automata.h"
-
-#include <iostream>  
-#include <vector>    
-#include <string>   
+#include <iostream>
+#include <vector>
+#include <string>
 
 int main() {
   std::vector<std::string> st{"OFF", "WAIT", "ACCEPT", "CHECK", "COOK"};

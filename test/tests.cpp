@@ -1,8 +1,8 @@
 // Copyright 2022 GHA Test Team
 
 #include <gtest/gtest.h>
-#include <string>   
-#include <vector>   
+#include <string>
+#include <vector>
 #include "Automata.h"
 
 TEST(AutomataTest, InitialStateIsOff) {
